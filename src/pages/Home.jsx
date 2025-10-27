@@ -5,18 +5,25 @@ export default function Home() {
   return (
     <section className="w-full">
 
-      {/* Hero Section with Animated Background Image */}
-      <div
-        className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1522202195463-8e2d7a9c3a88?auto=format&fit=crop&w=1600&q=80')",
-        }}
-      >
-        {/* Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/30 via-purple-600/20 to-pink-600/30 animate-gradient"></div>
+      {/* Hero Section with Video Background */}
+      <div className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
 
-        {/* Dark Overlay for Text Contrast */}
+        {/* Video Background (auto-plays, muted, loops) */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="https://videos.pexels.com/video-files/853889/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/40 via-purple-600/30 to-pink-600/40"></div>
+
+        {/* Dark Overlay for Readability */}
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Text */}
@@ -30,8 +37,12 @@ export default function Home() {
             crafting modern websites and sleek designs that blend creativity and functionality.
           </p>
           <div className="mt-8 flex gap-4 justify-center flex-wrap">
-            <a href="#projects" className="btn">View My Work</a>
-            <a href="#contact" className="btn-outline">Contact Me</a>
+            <a href="#projects" className="px-8 py-3 bg-indigo-600 text-white rounded-lg font-semibold shadow hover:bg-indigo-700 transition">
+              View My Work
+            </a>
+            <a href="#contact" className="px-8 py-3 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition">
+              Contact Me
+            </a>
           </div>
         </div>
       </div>
@@ -53,7 +64,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <div className="max-w-5xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Skills & Tools</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Skills & Tools</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -77,49 +88,25 @@ export default function Home() {
 
         {/* CV Buttons */}
         <div className="mt-12 flex flex-wrap justify-center gap-4">
-          {/* Download CV */}
           <a
-            href="/mycv.pdf"
+            href={`${import.meta.env.BASE_URL}mycv.pdf`}
             download="Martin_Kihungi_CV.pdf"
             className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 4v12m0 0l-4-4m4 4l4-4m-8 8h8"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4m-8 8h8" />
             </svg>
             Download CV
           </a>
 
-          {/* View CV */}
           <a
-            href="/mycv.pdf"
+            href={`${import.meta.env.BASE_URL}mycv.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 border-2 border-indigo-600 text-indigo-600 font-semibold rounded-xl shadow hover:bg-indigo-50 transition-all duration-300"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             View CV
           </a>
