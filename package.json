@@ -1,8 +1,8 @@
 {
-  "name": "portfolio-martin",
-  "private": true,
+  "name": "kihungi-folio",
   "version": "0.1.0",
-  "homepage": "https://234martin.github.io/the-portfolio/",
+  "private": true,
+  "homepage": "https://234martin.github.io/kihungi-folio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,24 +1,22 @@
 // src/pages/Home.jsx
 import React from "react";
-import heroVideo from "../assets/hero-video.mp4";
 
 export default function Home() {
   return (
     <section className="w-full">
 
-      {/* Hero Section with Video Background */}
-      <div className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
-        {/* Background Video */}
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          src={heroVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-        ></video>
+      {/* Hero Section with Animated Background Image */}
+      <div
+        className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1522202195463-8e2d7a9c3a88?auto=format&fit=crop&w=1600&q=80')",
+        }}
+      >
+        {/* Animated Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/30 via-purple-600/20 to-pink-600/30 animate-gradient"></div>
 
-        {/* Overlay */}
+        {/* Dark Overlay for Text Contrast */}
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Text */}
